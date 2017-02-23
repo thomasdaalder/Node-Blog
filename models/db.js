@@ -37,4 +37,7 @@ db.sync({
 
 module.exports = {
   db: db,
+  User: User,
+  Post: Post,
+  Comment: Comment
 }
