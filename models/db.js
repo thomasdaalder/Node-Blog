@@ -31,10 +31,19 @@ db.sync({
         username: "kevin",
         password: "hackme",
     }
+    const onePost = {
+        title: "YOLO",
+        body: "What is life? Just do it.",
+        date: "2017-02-25"
+    }
     User.create(oneUser)
+    Post.create(onePost)
 })
 .catch( (error) => console.log(error) );
 
 module.exports = {
   db: db,
+  User: User,
+  Post: Post,
+  Comment: Comment
 }

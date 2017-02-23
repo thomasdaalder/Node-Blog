@@ -1,18 +1,19 @@
-Sketch mockup // DONE
+Sketch mockup [x] // DONE
 
-Front-end // IN PROGRESS
+Front-end [-] // IN PROGRESS
 
 Construct routes
   LOGGED OUT
-    + Index (All posts with char limit)
+    + Index [x]
+      - (All posts with char limit) [ ]
     + Register
-      - GET
-      - Post => Auto login
+      - GET [ ]
+      - Post => Auto login [ ]
     + Login (Navbar)
-      - Post
+      - Post [ ]
   LOGGED IN
     + Log out
-      - GET
+      - GET [ ]
     + Profile [view own posts]
       - GET
     + Create post
