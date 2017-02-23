@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h3 <center>The most awesome collection of blog posts all in one place</center>
+  each item in blogList
+    .card.card-outline-primary.mb-3.text-center
+      .card-block
+        blockquote.card-blockquote
+          p
+            | <b>#{item.title}</b>
+          p
+            | #{item.body}
+          footer
+            | #{item.date}
