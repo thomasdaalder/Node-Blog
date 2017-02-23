@@ -44,6 +44,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// Running server
 app.listen(3000, () =>
 	{console.log('Server running')
 })
