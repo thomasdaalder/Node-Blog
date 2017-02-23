@@ -22,7 +22,7 @@ Construct routes
            => Comments
            => Post Comments
 
-Setup database
+Setup database // DONE
   + User
     - User
     - Password
