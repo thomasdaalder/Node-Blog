@@ -7,8 +7,9 @@ Construct routes
     + Index [x]
       - (All posts with char limit) [ ]
     + Register
-      - GET [ ]
-      - Post => Auto login [ ]
+      - GET [x]
+      - Post[x]
+        + Auto login [ ]
     + Login (Navbar)
       - Post [ ]
   LOGGED IN
@@ -23,7 +24,7 @@ Construct routes
            => Comments
            => Post Comments
 
-Setup database // DONE
+Setup database [x]
   + User
     - User
     - Password
