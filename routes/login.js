@@ -20,11 +20,10 @@ router.post('/', bodyParser.urlencoded({extended: true}), function (req, res) {
     where: {
         username: req.body.username
     }
-  }).then (function (user) {
+  })
+  .then (function (user) {
     if (user !== null && req.body.password === user.password) {
       req.session.user = user;
-      console.log('we console logging user')
-      console.log(user)
       res.redirect('/');
     }
     else {

@@ -13,6 +13,7 @@ const login = require('./routes/login');
 const logout = require('./routes/logout');
 const profile = require('./routes/profile');
 const createPost = require('./routes/createPost');
+const grabBlog = require('./routes/grabBlog')
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use('/login', login);
 app.use('/logout', logout);
 app.use('/profile', profile)
 app.use('/createPost', createPost)
+app.use('/blog', grabBlog)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
