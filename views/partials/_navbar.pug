@@ -12,7 +12,7 @@ nav.navbar.navbar-default
 			ul.nav.navbar-nav.navbar-right
 				if user
 								a(href='/logout')
-								button.btn.btn-primary(type='button') Logout
+									button.btn.btn-primary(type='button') Logout
 				else
 								form(action='/login', method='POST')
 									.form-group

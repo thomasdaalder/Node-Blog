@@ -15,7 +15,7 @@ Construct routes
       - Fix Non displaying Message [ ]
   LOGGED IN
     + Log out
-      - GET [ ]
+      - GET [x]
     + Profile [view own posts]
       - GET
     + Create post

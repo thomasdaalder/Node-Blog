@@ -10,6 +10,7 @@ const db = require(__dirname + '/models/db.js')
 const index = require('./routes/index');
 const register = require('./routes/register');
 const login = require('./routes/login');
+const logout = require('./routes/logout');
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use(session({
 app.use('/', index);
 app.use('/register', register);
 app.use('/login', login);
+app.use('/logout', logout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

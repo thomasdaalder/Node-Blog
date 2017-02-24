@@ -7,7 +7,6 @@ block content
     .card.card-outline-primary.mb-3.text-center
       .card-block
         blockquote.card-blockquote
-          h2= user.username
           if user
                   p
                     | <b>#{item.title}</b>
@@ -16,4 +15,4 @@ block content
                   footer
                     | #{item.date}
           else
-                  p hello
+                  p Please login to see posts.
