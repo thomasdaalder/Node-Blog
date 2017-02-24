@@ -11,6 +11,11 @@ nav.navbar.navbar-default
 
 			ul.nav.navbar-nav.navbar-right
 				if user
+								a(href='/createPost')
+									button.btn.btn-primary(type='button') Create Post
+								a(href='/profile')
+									button.btn.btn-primary(type='button') Profile
+
 								a(href='/logout')
 									button.btn.btn-primary(type='button') Logout
 				else
