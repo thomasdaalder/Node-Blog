@@ -10,11 +10,18 @@ nav.navbar.navbar-default
 			form.navbar-form.navbar-left
 
 			ul.nav.navbar-nav.navbar-right
-				.form-group
-					input.form-control(type='text', placeholder='username')
-					input.form-control(type='text', placeholder='password')
-				a(href='/login')
-					button.btn.btn-default(type='submit') Login
+				if user
+								a(href='/logout')
+								button.btn.btn-primary(type='button') Logout
+				else
+								form(action='/login', method='POST')
+									.form-group
+										label(for='exampleInputEmail1') Username
+										input#username.form-control(type='username', name='username', placeholder='Username')
+									.form-group
+										label(for='exampleInputPassword1') Password
+										input#password.form-control(type='password', name='password', placeholder='Password')
+									button.btn.btn-default(type='submit', id='submit') Login
 
-				a(href='/register')
-					button.btn.btn-primary(type='button') Register
+								a(href='/register')
+									button.btn.btn-primary(type='button') Register

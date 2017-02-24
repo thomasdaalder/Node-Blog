@@ -2,13 +2,18 @@ extends layout
 
 block content
   h3 <center>The most awesome collection of blog posts all in one place</center>
+  h2#error-message= message
   each item in blogList
     .card.card-outline-primary.mb-3.text-center
       .card-block
         blockquote.card-blockquote
-          p
-            | <b>#{item.title}</b>
-          p
-            | #{item.body}
-          footer
-            | #{item.date}
+          h2= user.username
+          if user
+                  p
+                    | <b>#{item.title}</b>
+                  p
+                    | #{item.body}
+                  footer
+                    | #{item.date}
+          else
+                  p hello

@@ -1,39 +1,26 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-const session = require('express-session')
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
 const pg = require('pg');
 const db = require(__dirname + '/models/db.js')
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var register = require('./routes/register');
-var login = require('./routes/login');
+const index = require('./routes/index');
+const register = require('./routes/register');
+const login = require('./routes/login');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Routes
-app.use('/', index);
-app.use('/users', users);
-app.use('/register', register);
-app.use('/login', login);
-
 
 // Session
 app.use(session({
@@ -41,6 +28,11 @@ app.use(session({
     resave: true,
     saveUninitialized: false
 }));
+
+// Routes
+app.use('/', index);
+app.use('/register', register);
+app.use('/login', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

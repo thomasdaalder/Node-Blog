@@ -11,7 +11,8 @@ Construct routes
       - Post[x]
         + Auto login [ ]
     + Login (Navbar)
-      - Post [ ]
+      - Post [x]
+      - Fix Non displaying Message [ ]
   LOGGED IN
     + Log out
       - GET [ ]
