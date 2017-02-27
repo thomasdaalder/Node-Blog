@@ -12,9 +12,11 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
   const userSession = req.session.user;
 
-  db.User.findOne({ where: {id: userSession.id} })
-  .then(function(User) {
-    return User.createPost({
+  db.User.findOne({
+     where: {id: userSession.id}
+    })
+  .then(function(user) {
+    return user.createPost({
         title: req.body.titleInput,
         body: req.body.messageInput,
         date: req.body.dateInput

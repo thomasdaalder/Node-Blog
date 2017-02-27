@@ -15,7 +15,7 @@ const Post = db.define('post', {
   date: Sequelize.DATE
 })
 
-// Defining users model
+// Defining comments model
 const Comment = db.define('comment', {
   username: Sequelize.STRING,
   body: Sequelize.STRING
@@ -48,7 +48,6 @@ db.sync({
         username: "kevin",
         body: "Wow this really touched me"
       })
-
 })
 .catch( (error) => console.log(error) );
 
