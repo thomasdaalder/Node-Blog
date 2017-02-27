@@ -10,10 +10,15 @@ router.get('/', function (req, res) {
 })
 
 router.post('/', function (req, res) {
-  db.Post.create({
-    title: req.body.titleInput,
-    body: req.body.messageInput,
-    date: req.body.dateInput
+  const userSession = req.session.user;
+
+  db.User.findOne({ where: {id: userSession.id} })
+  .then(function(User) {
+    return User.createPost({
+        title: req.body.titleInput,
+        body: req.body.messageInput,
+        date: req.body.dateInput
+    })
   })
   .then(function() {
     res.redirect('/');
