@@ -21,24 +21,28 @@ const Comment = db.define('comment', {
   body: Sequelize.STRING
 })
 
-// User.hasMany(Post);
+User.hasMany(Post);
+Post.belongsTo(User);
+
+Post.hasMany(Comment);
+Comment.belongsTo(Post);
 
 db.sync({
 	force: true,
 })
-.then(function(someParameter){
-    const oneUser = {
-        username: "kevin",
-        password: "hackme",
-    }
-    const onePost = {
-        title: "YOLO",
-        body: "What is life? Just do it.",
-        date: "2017-02-25"
-    }
-    User.create(oneUser)
-    Post.create(onePost)
-})
+.then(function(){
+    return User.create({
+      username: "kevin",
+      password: "hackme"
+    })
+  })
+.then(function(User){
+      return User.createPost({
+      title: "YOLO",
+      body: "Baby please",
+      date: "2017-02-25"
+    })
+  })
 .catch( (error) => console.log(error) );
 
 module.exports = {
@@ -47,4 +51,3 @@ module.exports = {
   Post: Post,
   Comment: Comment
 }
-

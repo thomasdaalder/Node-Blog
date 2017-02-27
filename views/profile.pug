@@ -3,3 +3,7 @@ extends layout
 block content
 
   h1 Profile of #{user.username}
+  each item in specificBlogs
+    p <b>#{item.title}</b>
+    p #{item.body}
+    p #{item.date}

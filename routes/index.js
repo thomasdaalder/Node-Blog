@@ -10,7 +10,8 @@ router.get('/', (req, res) => {
   const userSession = req.session.user; //can be null or undefined or contain user
   db.Post.findAll()
   .then((allPosts) => {
-    console.log(allPosts)
+    // console.log('console log for allPosts')
+    // console.log(allPosts)
     res.render('index',
     {blogList: allPosts,
     user: userSession

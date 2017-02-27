@@ -6,7 +6,11 @@ const session = require('express-session');
 
 router.get('/', function(req, res) {
 	const userSession = req.session.user;
-	res.render('profile', {user: userSession})
+	db.Post.findAll({ where: { userId: userSession.id } })
+	.then(function(blogsByUser) {
+	res.render('profile', {specificBlogs: blogsByUser,
+	user: userSession})
+	})
 })
 
 module.exports = router;
