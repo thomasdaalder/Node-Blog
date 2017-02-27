@@ -7,3 +7,13 @@ block content
       | #{blogPost.body}
       footer
       | #{blogPost.date}
+
+      h1 Leave a comment
+      form(action='/createComment', method='POST')
+        .form-group
+          label(for='exampleInputEmail1') Username
+          input#username.form-control(type='username', name='username', placeholder='Username')
+        .form-group
+          label(for='exampleInputPassword1') Comment Text
+          input#comment.form-control(type='comment', name='comment', placeholder='Comment here')
+        button.btn.btn-default(type='submit') Place Comment

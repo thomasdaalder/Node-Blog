@@ -36,13 +36,20 @@ db.sync({
       password: "hackme"
     })
   })
-.then(function(User){
-      return User.createPost({
+.then(function(user){
+      return user.createPost({
       title: "YOLO",
       body: "Baby please",
       date: "2017-02-25"
     })
   })
+.then(function(post) {
+      return post.createComment({
+        username: "kevin",
+        body: "Wow this really touched me"
+      })
+
+})
 .catch( (error) => console.log(error) );
 
 module.exports = {
