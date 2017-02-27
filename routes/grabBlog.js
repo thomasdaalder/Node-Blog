@@ -9,10 +9,11 @@ router.get('/:blogID', function(req, res) {
   db.Post.findOne({
    where: {
        id: req.params.blogID
-   } 
+   }
   })
   .then(function (Post) {
-    res.render('grabBlog', {blogPost: Post})
+    res.render('grabBlog', {blogPost: Post,
+  	user: userSession})
   })
 })
 
