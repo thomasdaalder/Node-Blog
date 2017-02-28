@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 
 // Create clickable link for unique Blog IDs
-router.get('/:blogID', function(req, res) {
+router.get('/:blogID', (req, res) => {
   const userSession = req.session.user;
   db.Post.findOne({
      where: {

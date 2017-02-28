@@ -17,10 +17,10 @@ Construct routes
     + Log out
       - GET [x]
     + Profile [view own posts]
-      - GET [ ]
+      - GET [x]
     + Create post
       - GET [x]
-      - POST [ ]
+      - POST [x]
         => New Page
            => Comments
            => Post Comments
