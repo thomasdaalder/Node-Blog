@@ -41,15 +41,15 @@ db.sync({
   })
 .then(function(user){
       return user.createPost({
-      title: "YOLO",
-      body: "Baby please",
+      title: "Lorem Ipsum",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero leo, pellentesque ornare, adipiscing vitae, rhoncus commodo, nulla. Fusce quis ipsum.",
       date: "2017-02-25"
     })
   })
 .then(function(post) {
       return post.createComment({
         username: "Metta",
-        body: "Wow this really touched me"
+        body: "Wow, thank you for writing this. This changed my life."
       })
 })
 .catch( (error) => console.log(error) );
