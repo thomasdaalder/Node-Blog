@@ -41,8 +41,8 @@ db.sync({
   })
 .then(function(user){
       return user.createPost({
-      title: "Lorem Ipsum",
-      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero leo, pellentesque ornare, adipiscing vitae, rhoncus commodo, nulla. Fusce quis ipsum.",
+      title: "How to Spot a Common Mental Error That Leads to Misguided Thinking",
+      body: "Human beings have been blaming strange behavior on the full moon for centuries. In the Middle Ages, for example, people claimed that a full moon could turn humans into werewolves.",
       date: "2017-02-25"
     })
   })

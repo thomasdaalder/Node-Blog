@@ -1,8 +1,9 @@
 extends layout
 
 block content
+  .grabblog
       p
-      | <b>#{blogPost.title}</b>
+      | <h2>#{blogPost.title}</h2>
       p
       | #{blogPost.body}
       footer
@@ -21,5 +22,5 @@ block content
           input#username.form-control(type='username', name='username', placeholder='Username')
         .form-group
           label(for='exampleInputPassword1') Comment Text
-          input#comment.form-control(type='comment', name='comment', placeholder='Comment here')
+          textarea#comment.form-control(type='comment', rows='5', name='comment', placeholder='Comment here')
         button.btn.btn-default(type='submit') Place Comment

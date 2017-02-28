@@ -5,20 +5,20 @@ nav.navbar.navbar-default.navbar-fixed-top
 					.form-group
 						if user
 										a(href='/createPost')
-													button.btn.btn-primary(type='button') Create Post
+													button.btn.btn-primary.btn-nav(type='button') Create Post
 										a(href='/profile')
-													button.btn.btn-primary(type='button') Profile
+													button.btn.btn-primary.btn-nav(type='button') Profile
 										a(href='/logout')
-													button.btn.btn-primary(type='button') Logout
-										p.navbar-text.navbar-left Signed in as: 
-													a.navbar-link(href='profile') #{user.username}
+													button.btn.btn-primary.btn-logout(type='button') Logout
+										p.navbar-text.navbar-left Signed in as:&nbsp;
+													a.navbar-link(href='/profile') #{user.username}
 						else
 										form(action='/login', method='POST')
 													.form-group
 															input#username.form-control(type='username', name='username', placeholder='Username')
 													.form-group
 															input#password.form-control(type='password', name='password', placeholder='Password')
-													button.btn.btn-success(type='submit', id='submit') Login
+													button.btn.btn-success.btn-login(type='submit', id='submit') Login
 
 															a(href='/register')
-																		button.btn.btn-info(type='button') Register
+																		button.btn.btn-info.btn-login(type='button') Register
