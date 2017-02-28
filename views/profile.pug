@@ -3,8 +3,12 @@ extends layout
 block content
 
   h1 Profile of #{user.username}
-  each item in specificBlogs
-    a(href='/blog/' + item.id)
-      p <b>#{item.title}</b>
-    p #{item.body}
-    p #{item.date}
+
+  if user
+            each item in specificBlogs
+              a(href='/blog/' + item.id)
+                p <b>#{item.title}</b>
+              p #{item.body}
+              p #{item.date}
+  else
+            p Please login first.
