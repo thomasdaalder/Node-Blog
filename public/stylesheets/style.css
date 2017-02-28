@@ -85,10 +85,43 @@ blockquote h3 {
 }
 
 blockquote p {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto:300', sans-serif;
   font-style: normal;
 }
 
 .grabblog h2{
-  text-align: center;
+  text-align: left;
+  padding-left: 130px;
+}
+
+.grabblog p{
+  font-size: 20px;
+  padding-left: 130px;
+  padding-right: 130px;
+  font-family: 'Roboto:300', sans-serif;
+}
+
+footer{
+  font-size: 20px;
+  padding-left: 130px;
+  padding-right: 130px;
+  font-family: 'Roboto:400', sans-serif;
+  font-style: italic;
+}
+
+.stylecomments{
+  font-size: 20px;
+  padding-left: 130px;
+  padding-right: 130px;
+  font-family: 'Roboto:400', sans-serif;
+}
+
+.grabblog h3{
+  padding-left: 130px;
+  padding-right: 130px;
+}
+
+.stylepanel{
+  padding-left: 130px;
+  padding-right: 130px;
 }

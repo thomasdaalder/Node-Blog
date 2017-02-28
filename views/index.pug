@@ -13,9 +13,7 @@ block content
           if user
                   a(href='/blog/' + item.id)
                     <h3>#{item.title}</h3>
-                  p
-                    | #{item.body}
-                  footer
-                    | #{item.date}
+                  p #{item.body}
+                    footer #{item.date}
           else
                   p Please login to view all blog-posts.
