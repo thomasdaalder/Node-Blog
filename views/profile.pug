@@ -2,8 +2,7 @@ extends layout
 
 block content
 
-  h1 Profile of #{user.username}
-
+  h1 Blogposts from #{user.username}
   if user
             each item in specificBlogs
               a(href='/blog/' + item.id)

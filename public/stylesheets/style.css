@@ -12,7 +12,7 @@ body p {
 a {
   color: #00B7FF;
 }
-
+/*Navbar*/
 .navbar-default-bg{
   background-color: red;
 }
@@ -93,6 +93,10 @@ blockquote p {
   text-align: left;
   padding-left: 130px;
 }
+.grabblog footer{
+  padding-left: 130px;
+
+}
 
 .grabblog p{
   font-size: 20px;
@@ -101,7 +105,7 @@ blockquote p {
   font-family: 'Roboto:300', sans-serif;
 }
 
-footer{
+.blockquote footer{
   font-size: 20px;
   padding-left: 130px;
   padding-right: 130px;
