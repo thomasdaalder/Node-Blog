@@ -4,7 +4,7 @@ const db = require('../models/db.js');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-// router.post
+// Inlog system that checks if user has filled in the correct username or password
 router.post('/', bodyParser.urlencoded({extended: true}), function (req, res) {
     if(req.body.username.length === 0) {
         res.redirect('/?message=' + encodeURIComponent("Please fill out in your username."));

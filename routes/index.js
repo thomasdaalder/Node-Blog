@@ -1,17 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const db = require('../models/db.js');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const session = require('express-session');
 
-
-/* GET home page. */
+// Index page that renders all blog posts
 router.get('/', (req, res) => {
-  const userSession = req.session.user; //can be null or undefined or contain user
+  const userSession = req.session.user
   db.Post.findAll()
   .then((allPosts) => {
-    // console.log('console log for allPosts')
-    // console.log(allPosts)
     res.render('index',
     {blogList: allPosts,
     user: userSession

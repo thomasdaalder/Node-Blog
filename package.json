@@ -1,6 +1,6 @@
 {
   "name": "node-blog",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -14,7 +14,6 @@
     "morgan": "~1.7.0",
     "pg": "^6.1.2",
     "pug": "^2.0.0-beta11",
-    "sequelize": "^3.30.2",
-    "serve-favicon": "~2.3.2"
+    "sequelize": "^3.30.2"
   }
 }

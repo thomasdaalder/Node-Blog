@@ -1,13 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const db = require('../models/db.js');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const session = require('express-session');
 
+// Create clickable link for unique Blog IDs
 router.get('/:blogID', function(req, res) {
   const userSession = req.session.user;
-  console.log('AAAAAA req.params.blogID')
-  console.log(req.params.blogID)
   db.Post.findOne({
      where: {
          id: req.params.blogID
@@ -16,8 +15,6 @@ router.get('/:blogID', function(req, res) {
      }]
   })
   .then(function (postABlog) {
-    console.log('this is the megagdkfjskfjkfj POST')
-    console.log(postABlog)
     res.render('grabBlog', {
       blogPost: postABlog,
   	  user: userSession,
@@ -26,6 +23,7 @@ router.get('/:blogID', function(req, res) {
   })
 })
 
+// Submit comments under the specific blog ID
 router.post('/:blogId', (req, res) => {
   const userSession = req.session.user;
   db.Post.findOne({

@@ -1,3 +1,4 @@
+// Enabling connection w/ Sequelize
 const Sequelize = require('sequelize');
 const connectionString = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/nodeblog';
 const db = new Sequelize(connectionString);
@@ -21,12 +22,14 @@ const Comment = db.define('comment', {
   body: Sequelize.STRING
 })
 
+// Creating relationships
 User.hasMany(Post);
 Post.belongsTo(User);
 
 Post.hasMany(Comment);
 Comment.belongsTo(Post);
 
+// Syncing database and creating base user
 db.sync({
 	force: true,
 })
@@ -45,7 +48,7 @@ db.sync({
   })
 .then(function(post) {
       return post.createComment({
-        username: "kevin",
+        username: "Metta",
         body: "Wow this really touched me"
       })
 })
