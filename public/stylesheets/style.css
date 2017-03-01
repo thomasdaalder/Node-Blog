@@ -17,6 +17,11 @@ a {
   background-color: red;
 }
 
+.navbar-brand img{
+  max-width:150px;
+  max-height: 150px;
+}
+
 .navbar-default{
   box-shadow: none;
   border: 2px, black;
@@ -54,6 +59,11 @@ a {
   margin-top: 10px;
   color: rgb(28, 201, 98)
 }
+
+.navbar-brand{
+  margin-bottom: 11px; 
+}
+
 
 #text-intro{
   text-align: left;
