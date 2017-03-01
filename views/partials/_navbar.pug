@@ -1,7 +1,7 @@
 nav.navbar.navbar-default.navbar-fixed-top
 	.navbar-header
 		a.navbar-brand(href='/')
-			img(src="thumblr.png")
+			img(src="/thumblr.png")
 	ul.nav.navbar-form.navbar-right
 					.form-group
 						if user
@@ -20,6 +20,5 @@ nav.navbar.navbar-default.navbar-fixed-top
 													.form-group
 															input#password.form-control(type='password', name='password', placeholder='Password')
 													button.btn.btn-success.btn-login(type='submit', id='submit') Login
-
-										a(href='/register')
-													button.btn.btn-info.btn-login(type='button') Register
+													a(href='/register')
+																button.btn.btn-info.btn-login(type='button') Register
