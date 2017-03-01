@@ -7,12 +7,13 @@ const session = require('express-session');
 // Create clickable link for unique Blog IDs
 router.get('/:blogID', (req, res) => {
   const userSession = req.session.user;
+  console.log('logging blogID')
+  console.log(req.params.blogID)
   db.Post.findOne({
      where: {
          id: req.params.blogID
      },
-     include: [{ model: db.Comment
-     }]
+     include: [db.Comment]
   })
   .then(function (postABlog) {
     res.render('grabBlog', {
@@ -21,6 +22,7 @@ router.get('/:blogID', (req, res) => {
       paramsID: req.params.blogID
     })
   })
+  .catch(e => console.log(e))
 })
 
 // Submit comments under the specific blog ID
@@ -40,6 +42,7 @@ router.post('/:blogId', (req, res) => {
   .then(function() {
     res.redirect('/blog/' + req.params.blogId);
   })
+  .catch(e => console.log(e))
 })
 
 module.exports = router;

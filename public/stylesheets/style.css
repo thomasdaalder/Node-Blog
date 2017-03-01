@@ -61,7 +61,7 @@ a {
 }
 
 .navbar-brand{
-  margin-bottom: 11px; 
+  margin-bottom: 11px;
 }
 
 
@@ -138,4 +138,32 @@ blockquote p {
 .stylepanel{
   padding-left: 130px;
   padding-right: 130px;
+}
+
+/*profile styling*/
+
+.profile{
+  font-size: 20px;
+  padding-left: 130px;
+  padding-right: 130px;
+}
+
+.profile h3{
+  color: black;
+}
+
+.profile h3:hover{
+  text-decoration: none;
+  color: rgb(28, 201, 98);
+}
+
+.profile p{
+  font-family: 'Roboto:400', sans-serif;
+  font-style: italic;
+
+
+}
+
+.profile h1{
+  text-align: center;
 }

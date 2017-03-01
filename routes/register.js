@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db.js');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
 
 // Render register form
 router.get('/', function(req, res) {
