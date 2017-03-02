@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../models/db.js');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const bcrypt = require('bcrypt');
 
 // Inlog system that checks if user has filled in the correct username or password
 router.post('/', bodyParser.urlencoded({extended: true}), function (req, res) {
@@ -22,16 +23,15 @@ router.post('/', bodyParser.urlencoded({extended: true}), function (req, res) {
     }
   })
   .then (function (user) {
-    if (user !== null && req.body.password === user.password) {
-      req.session.user = user;
-      res.redirect('/');
-    }
-    else {
-            res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
+    bcrypt.compare(req.body.password, user.password, function (err, hash) {
+        if (hash === true) {
+          req.session.user = user;
+          res.redirect('/');
         }
-    }, function (error) {
-        res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
-    });
+        else {
+          res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
+        }
+    })
   })
-
+})
 module.exports = router;
