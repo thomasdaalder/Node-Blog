@@ -9,6 +9,8 @@ const bodyParser = require('body-parser');
 const pg = require('pg');
 const db = require(__dirname + '/models/db.js')
 const app = express();
+const bcrypt = require('bcrypt');
+
 
 // Including usage of routes
 const index = require('./routes/index');
