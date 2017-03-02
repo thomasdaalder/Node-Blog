@@ -11,6 +11,12 @@ router.get('/', function(req, res) {
 
 // Create user to database
 router.post('/', function(req, res){
+	// Check if Username exists findOne
+	// db.User.findOne({where: { username: req.body.username }
+	// 	.then res.redirect('/?message=' + encodeURIComponent("Username already exists"));
+	// 	return;
+
+	// Else continue creating user
 	var password = req.body.password
 	bcrypt.hash(req.body.password, 8, (err, hash)=>{
 	db.User.create({
