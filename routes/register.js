@@ -11,21 +11,27 @@ router.get('/', function(req, res) {
 
 // Create user to database
 router.post('/', function(req, res){
-	// Check if Username exists findOne
-	// db.User.findOne({where: { username: req.body.username }
-	// 	.then res.redirect('/?message=' + encodeURIComponent("Username already exists"));
-	// 	return;
+	// Check if Username already exists
+	db.User.findOne({where: { username: req.body.username }})
+		.then( (user) =>{
+			if (user){
+				res.redirect('/register?message=' + encodeURIComponent("Username already exists"));
+				// Put alert that username already exist
+			}
+			else {
 
-	// Else continue creating user
-	var password = req.body.password
-	bcrypt.hash(req.body.password, 8, (err, hash)=>{
-	db.User.create({
-		username: req.body.username,
-		password: hash
-	})
-	.then( ()=>{
-		res.redirect('/');
-	})
+				var password = req.body.password
+				bcrypt.hash(req.body.password, 8, (err, hash)=>{
+				db.User.create({
+					username: req.body.username,
+					password: hash
+				})
+				.then( ()=>{
+					res.redirect('/');
+					// Alert that user registered worked
+					})
+				})
+			}
 	})
 });
 module.exports = router;

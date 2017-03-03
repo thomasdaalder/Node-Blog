@@ -11,7 +11,6 @@ const db = require(__dirname + '/models/db.js')
 const app = express();
 const bcrypt = require('bcrypt');
 
-
 // Including usage of routes
 const index = require('./routes/index');
 const register = require('./routes/register');
