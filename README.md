@@ -1,7 +1,7 @@
 # Node-Blog
 A blog application made with Node.js, PUG and Sequelize.
 
-![picture alt](http://imgur.com/a/rOoYk "Homepage screenshot")
+![picture alt](http://i.imgur.com/L2iAtvh.png "Homepage screenshot")
 
 #Features
 * Register
