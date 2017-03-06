@@ -1,6 +1,8 @@
 # Node-Blog
 A blog application made with Node.js, PUG and Sequelize.
 
+![picture alt](http://imgur.com/a/rOoYk "Homepage screenshot")
+
 #Features
 * Register
 * Login
@@ -12,4 +14,4 @@ A blog application made with Node.js, PUG and Sequelize.
 * View posts of logged in user
 
 # Contributors
-@ThienNgn, @thomasdaalder
+[Thien Nguyen](https://github.com/ThienNgn) and [Thomas Daalder](https://github.com/thomasdaalder)
