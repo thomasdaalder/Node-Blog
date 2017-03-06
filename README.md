@@ -12,4 +12,4 @@ A blog application made with Node.js, PUG and Sequelize.
 * View posts of logged in user
 
 # Contributors
-Thien Nguyen. Thomas Daalder.
+@ThienNgn, @thomasdaalder
