@@ -10,6 +10,7 @@ const pg = require('pg');
 const db = require(__dirname + '/models/db.js')
 const app = express();
 const bcrypt = require('bcrypt');
+const flash = require('connect-flash');
 
 // Including usage of routes
 const index = require('./routes/index');
@@ -30,12 +31,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // Session
 app.use(session({
     secret: 'oh wow very secret much security',
     resave: true,
     saveUninitialized: false
 }));
+app.use(flash());
 
 // Routes
 app.use('/', index);
